@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sercan Aslan Hair | Premium Hair Transplant Clinic Istanbul</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0A192F',
+                        gold: '#D4AF37',
+                        champagne: '#F7E7CE',
+                        purewhite: '#FFFFFF',
+                        graylight: '#F8F9FA',
+                        graydark: '#1A1A1A'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
+        h1, h2, h3, h4, h5, h6, .font-serif { font-family: 'Playfair Display', serif; }
+        .nav-glass { background: rgba(10, 25, 47, 0.98); backdrop-filter: blur(15px); }
+        .gradient-gold { background: linear-gradient(135deg, #D4AF37 0%, #F7E7CE 100%); }
+        .before-after-slider { position: relative; overflow: hidden; border-radius: 1rem; }
+        .sticky-mobile-bar { position: fixed; bottom: 0; left: 0; right: 0; display: flex; z-index: 1000; box-shadow: 0 -5px 20px rgba(0,0,0,0.2); }
+        .doctor-card:hover img { transform: scale(1.05); }
+        .floating-wa { position: fixed; bottom: 85px; right: 20px; z-index: 999; }
+        @media (min-width: 768px) { .floating-wa { bottom: 30px; } }
+    </style>
+</head>
+<body class="bg-white text-graydark antialiased">
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/905000000000" class="floating-wa bg-green-500 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.634 1.437h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- Top Bar -->
+    <div class="bg-navy text-purewhite text-[10px] py-2 border-b border-gold/20 hidden md:block">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center uppercase tracking-widest">
+            <div class="flex gap-4">
+                <span>📍 Istanbul, Turkey</span>
+                <span>📞 +90 500 000 00 00</span>
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="text-gold">EN</a>
+                <a href="#">DE</a>
+                <a href="#">IT</a>
+                <a href="#">FR</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-glass text-purewhite sticky top-0 z-[100] shadow-xl">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-2">
+                    <span class="text-gold text-2xl">⚕️</span>
+                    <span class="font-serif text-xl md:text-2xl tracking-tighter font-bold uppercase">Sercan Aslan <span class="text-gold">Hair</span></span>
+                </div>
+                <div class="hidden lg:flex space-x-8 text-[11px] uppercase tracking-widest font-bold">
+                    <a href="#about" class="hover:text-gold transition-colors">Biz Kimiz?</a>
+                    <a href="#services" class="hover:text-gold transition-colors">Teknikler</a>
+                    <a href="#results" class="hover:text-gold transition-colors">Sonuçlar</a>
+                    <a href="#team" class="hover:text-gold transition-colors">Ekibimiz</a>
+                    <a href="#contact" class="bg-gold text-navy px-5 py-2 rounded-full hover:bg-white transition-all">Ücretsiz Analiz</a>
+                </div>
+                <button class="lg:hidden text-gold">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-[85vh] flex items-center overflow-hidden bg-navy">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000" alt="Clinic Interior" class="w-full h-full object-cover opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-r from-navy via-navy/80 to-transparent"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="max-w-3xl">
+                <span class="inline-block bg-gold/20 text-gold px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 border border-gold/30">JCI Accredited Clinic</span>
+                <h1 class="text-5xl md:text-7xl font-serif text-purewhite font-bold leading-tight mb-6">
+                    Saçlarınızla Birlikte <br> <span class="text-gold italic">Özgüveninizi</span> Geri Kazanın
+                </h1>
+                <p class="text-lg text-gray-300 mb-10 leading-relaxed max-w-xl">
+                    Sercan Aslan ve uzman tıbbi kadrosu ile lüksün ve medikal mükemmelliğin buluştuğu noktada, kalıcı ve doğal sonuçlar için doğru yerdesiniz.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="bg-gold text-navy font-bold px-10 py-5 rounded-full shadow-2xl hover:scale-105 transition-transform">WhatsApp Analizi Başlat</a>
+                    <a href="#results" class="border border-white/30 text-white font-bold px-10 py-5 rounded-full hover:bg-white hover:text-navy transition-all">Sonuçları Gör</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Trust Stats -->
+    <section class="py-12 bg-graylight border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-serif font-bold text-navy" id="stat1">0</div>
+                    <div class="text-[10px] uppercase tracking-widest text-gold font-bold mt-2">Başarılı Operasyon</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-serif font-bold text-navy" id="stat2">0</div>
+                    <div class="text-[10px] uppercase tracking-widest text-gold font-bold mt-2">Mutlu Hasta</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-serif font-bold text-navy" id="stat3">0</div>
+                    <div class="text-[10px] uppercase tracking-widest text-gold font-bold mt-2">Uzman Kadro</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-serif font-bold text-navy" id="stat4">0</div>
+                    <div class="text-[10px] uppercase tracking-widest text-gold font-bold mt-2">Ülke Referansı</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medical Team Section -->
+    <section id="team" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold text-navy mb-4">Uzman Tıbbi Kadromuz</h2>
+                <div class="w-20 h-1 bg-gold mx-auto mb-6"></div>
+                <p class="text-gray-500 max-w-2xl mx-auto">Operasyonlarınız, alanında uluslararası sertifikalara sahip deneyimli doktorlarımız ve uzman ekiplerimiz tarafından yönetilir.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Sercan Aslan -->
+                <div class="doctor-card group">
+                    <div class="relative overflow-hidden rounded-2xl mb-6 shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=800" alt="Sercan Aslan" class="w-full h-[400px] object-cover transition-transform duration-500">
+                        <div class="absolute inset-0 bg-navy/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                            <span class="text-white text-sm italic italic">"Saç ekimi bir sanat, hastalarımız ise en değerli eserlerimizdir."</span>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-navy">Sercan Aslan</h3>
+                    <p class="text-gold font-bold text-xs uppercase tracking-widest mb-4">Saç Ekimi Koordinatörü & Kurucu</p>
+                    <p class="text-sm text-gray-500 leading-relaxed">15 yılı aşkın tecrübesiyle binlerce hastanın değişim yolculuğuna liderlik etti.</p>
+                </div>
+                <!-- Dr. Ibrahim -->
+                <div class="doctor-card group">
+                    <div class="relative overflow-hidden rounded-2xl mb-6 shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71f1e59816?auto=format&fit=crop&q=80&w=800" alt="Dr. İbrahim Keskin" class="w-full h-[400px] object-cover transition-transform duration-500">
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-navy">Dr. İbrahim Keskin</h3>
+                    <p class="text-gold font-bold text-xs uppercase tracking-widest mb-4">Medikal Direktör</p>
+                    <p class="text-sm text-gray-500 leading-relaxed">JCI standartlarında cerrahi protokoller ve ileri seviye ekim teknikleri uzmanı.</p>
+                </div>
+                <!-- Specialist -->
+                <div class="doctor-card group">
+                    <div class="relative overflow-hidden rounded-2xl mb-6 shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=800" alt="Medical Team" class="w-full h-[400px] object-cover transition-transform duration-500">
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-navy">Expert Medical Team</h3>
+                    <p class="text-gold font-bold text-xs uppercase tracking-widest mb-4">Hemşirelik ve Teknisyen Ekibi</p>
+                    <p class="text-sm text-gray-500 leading-relaxed">Her operasyonda minimum 3 kişilik uzman ekip ile maksimum greft sağlığı.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Techniques -->
+    <section id="services" class="py-24 bg-graylight relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div class="max-w-2xl">
+                    <h2 class="text-4xl font-serif font-bold text-navy mb-4">İleri Seviye Ekim Teknikleri</h2>
+                    <p class="text-gray-500">Kişiye özel planlama ile en doğal saç çizgisi ve maksimum yoğunluğu hedefleyen teknolojiler kullanıyoruz.</p>
+                </div>
+                <div class="flex gap-2">
+                    <span class="bg-navy text-white px-3 py-1 text-[10px] font-bold rounded">FUE</span>
+                    <span class="bg-navy text-white px-3 py-1 text-[10px] font-bold rounded">DHI</span>
+                    <span class="bg-navy text-white px-3 py-1 text-[10px] font-bold rounded">SAPPHIRE</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Sapphire FUE -->
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-2xl transition-all group">
+                    <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-gold transition-colors">
+                        <span class="text-2xl">💎</span>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-navy mb-4">Sapphire FUE</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed mb-6">Safir uçlar sayesinde doku hasarını minimize eden, hızlı iyileşme sağlayan ve daha sık ekim imkanı sunan premium teknik.</p>
+                    <ul class="text-xs space-y-3 font-bold text-navy/70">
+                        <li>• Daha Hızlı İyileşme</li>
+                        <li>• Maksimum Doğal Görünüm</li>
+                        <li>• Sıfır İze Yakın Sonuç</li>
+                    </ul>
+                </div>
+                <!-- DHI -->
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-2xl transition-all group">
+                    <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-gold transition-colors">
+                        <span class="text-2xl">🖋️</span>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-navy mb-4">DHI (Choi Pen)</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed mb-6">Kanal açmadan doğrudan ekim imkanı sağlayan, tıraşsız operasyonlar için ideal olan en modern yöntem.</p>
+                    <ul class="text-xs space-y-3 font-bold text-navy/70">
+                        <li>• Tıraşsız Ekim Seçeneği</li>
+                        <li>• Direkt İmplantasyon</li>
+                        <li>• Yüksek Greft Sağlığı</li>
+                    </ul>
+                </div>
+                <!-- Beard/Eyebrow -->
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-2xl transition-all group">
+                    <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-gold transition-colors">
+                        <span class="text-2xl">🧔</span>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-navy mb-4">Sakal & Kaş Ekimi</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed mb-6">Yüz hatlarını belirginleştiren, köse veya dökülmüş alanlar için sanatsal bir yaklaşım gerektiren estetik uygulamalar.</p>
+                    <ul class="text-xs space-y-3 font-bold text-navy/70">
+                        <li>• Estetik Yüz Analizi</li>
+                        <li>• Kişisel Sakal Tasarımı</li>
+                        <li>• Doğal Açı Belirleme</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results / Before After -->
+    <section id="results" class="py-24 bg-navy text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold text-gold mb-4">Gerçek Değişimler</h2>
+                <p class="text-gray-300">Sadece "ekim" yapmıyoruz, hayat değiştiriyoruz. İşte binlerce başarı hikayemizden birkaçı.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Case 1 -->
+                <div class="before-after-slider border border-gold/20">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" alt="Sonuç 1" class="w-full h-[300px] object-cover">
+                    <div class="absolute bottom-0 inset-x-0 p-4 bg-navy/80 flex justify-between items-center">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-gold">8 Ay Sonra</span>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-white">4500 Greft</span>
+                    </div>
+                </div>
+                <!-- Case 2 -->
+                <div class="before-after-slider border border-gold/20">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=800" alt="Sonuç 2" class="w-full h-[300px] object-cover">
+                    <div class="absolute bottom-0 inset-x-0 p-4 bg-navy/80 flex justify-between items-center">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-gold">12 Ay Sonra</span>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-white">5200 Greft</span>
+                    </div>
+                </div>
+                <!-- Case 3 -->
+                <div class="before-after-slider border border-gold/20">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=800" alt="Sonuç 3" class="w-full h-[300px] object-cover">
+                    <div class="absolute bottom-0 inset-x-0 p-4 bg-navy/80 flex justify-between items-center">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-gold">10 Ay Sonra</span>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-white">3800 Greft</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <a href="#" class="text-gold font-bold text-sm underline underline-offset-8 uppercase tracking-widest hover:text-white transition-colors">Tüm Galeriyi Gör (Instagram)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Luxury Experience Section -->
+    <section class="py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="relative">
+                    <div class="absolute -top-10 -left-10 w-40 h-40 bg-gold/10 rounded-full blur-3xl"></div>
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1000" alt="Hotel Luxury" class="relative z-10 rounded-3xl shadow-2xl">
+                    <div class="absolute -bottom-10 -right-10 bg-navy p-10 rounded-3xl text-white z-20 hidden md:block border-t-4 border-gold shadow-2xl">
+                        <div class="text-4xl font-serif text-gold mb-2">5★</div>
+                        <div class="text-xs uppercase tracking-widest font-bold">VIP Konaklama & <br>Lüks Transfer</div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-4xl font-serif font-bold text-navy mb-8 leading-tight">Sadece Bir Operasyon Değil, <br><span class="text-gold italic">Ayrıcalıklı Bir Deneyim</span></h2>
+                    <p class="text-gray-500 mb-8 leading-relaxed">
+                        Yurt dışından gelen misafirlerimiz için her detayı düşündük. Sizi havaalanında VIP araçlarımızla karşılıyor, İstanbul'un en lüks 5 yıldızlı otellerinde ağırlıyor ve tüm transferlerinizi özel asistanınız eşliğinde gerçekleştiriyoruz.
+                    </p>
+                    <div class="space-y-4 mb-10">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-gold/20 text-gold flex items-center justify-center rounded-full font-bold">✓</div>
+                            <span class="text-sm font-bold text-navy">VIP Havaalanı Karşılama (Mercedes Vito)</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-gold/20 text-gold flex items-center justify-center rounded-full font-bold">✓</div>
+                            <span class="text-sm font-bold text-navy">Lüks 5 Yıldızlı Otel Konaklaması</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-gold/20 text-gold flex items-center justify-center rounded-full font-bold">✓</div>
+                            <span class="text-sm font-bold text-navy">Tercümanlık ve Asistanlık Hizmeti</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Quiz / Contact -->
+    <section id="contact" class="py-24 bg-navy relative">
+        <div class="absolute inset-0 bg-gold/5 pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="bg-white rounded-[2.5rem] p-10 md:p-16 shadow-2xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-navy mb-4">Saç Analizinizi Şimdi Başlatın</h2>
+                    <p class="text-gray-500">Ücretsiz konsültasyon ve kişiye özel tedavi planı için aşağıdaki adımları tamamlayın.</p>
+                </div>
+
+                <div id="quiz-flow">
+                    <!-- Step 1 -->
+                    <div id="step1">
+                        <h4 class="text-lg font-bold text-navy mb-6 text-center">Dökülme seviyeniz nedir?</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+                            <button onclick="nextStep(1, 2)" class="border-2 border-gray-100 p-4 rounded-2xl hover:border-gold hover:bg-gold/5 transition-all">
+                                <span class="text-3xl block mb-2">🌱</span>
+                                <span class="text-[10px] font-bold uppercase">Hafif</span>
+                            </button>
+                            <button onclick="nextStep(1, 2)" class="border-2 border-gray-100 p-4 rounded-2xl hover:border-gold hover:bg-gold/5 transition-all">
+                                <span class="text-3xl block mb-2">🌿</span>
+                                <span class="text-[10px] font-bold uppercase">Orta</span>
+                            </button>
+                            <button onclick="nextStep(1, 2)" class="border-2 border-gray-100 p-4 rounded-2xl hover:border-gold hover:bg-gold/5 transition-all">
+                                <span class="text-3xl block mb-2">🍂</span>
+                                <span class="text-[10px] font-bold uppercase">Yoğun</span>
+                            </button>
+                            <button onclick="nextStep(1, 2)" class="border-2 border-gray-100 p-4 rounded-2xl hover:border-gold hover:bg-gold/5 transition-all">
+                                <span class="text-3xl block mb-2">🧔</span>
+                                <span class="text-[10px] font-bold uppercase">Sakal</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div id="step2" class="hidden">
+                        <h4 class="text-lg font-bold text-navy mb-6 text-center">Yaş aralığınız nedir?</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+                            <button onclick="nextStep(2, 3)" class="border-2 border-gray-100 py-4 rounded-2xl hover:border-gold font-bold">18-30</button>
+                            <button onclick="nextStep(2, 3)" class="border-2 border-gray-100 py-4 rounded-2xl hover:border-gold font-bold">31-50</button>
+                            <button onclick="nextStep(2, 3)" class="border-2 border-gray-100 py-4 rounded-2xl hover:border-gold font-bold">50+</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div id="step3" class="hidden">
+                        <h4 class="text-lg font-bold text-navy mb-6 text-center">İletişim Bilgileri</h4>
+                        <div class="space-y-4">
+                            <input type="text" placeholder="Adınız Soyadınız" class="w-full bg-graylight p-5 rounded-2xl outline-none border border-transparent focus:border-gold transition-all">
+                            <input type="tel" placeholder="Telefon Numaranız (+90 ...)" class="w-full bg-graylight p-5 rounded-2xl outline-none border border-transparent focus:border-gold transition-all">
+                            <button onclick="finishAnalysis()" class="w-full gradient-gold text-navy font-bold py-5 rounded-2xl shadow-xl hover:scale-[1.02] transition-transform uppercase tracking-widest text-sm">Analiz Sonucunu Gönder</button>
+                        </div>
+                        <p class="text-[9px] text-gray-400 mt-6 text-center">Verileriniz KVKK kapsamında korunmaktadır. Formu doldurarak iletişime geçmemizi kabul etmiş olursunuz.</p>
+                    </div>
+
+                    <!-- Final -->
+                    <div id="step-final" class="hidden text-center py-10">
+                        <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <h4 class="text-2xl font-bold text-navy mb-2">Talebiniz Alındı!</h4>
+                        <p class="text-gray-500">Medikal danışmanımız en kısa sürede WhatsApp üzerinden sizinle iletişime geçecektir.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl font-serif font-bold text-navy mb-12 text-center">Sıkça Sorulan Sorular</h2>
+            <div class="space-y-4">
+                <div class="border-b border-gray-100 pb-4">
+                    <button class="w-full flex justify-between items-center py-2 text-left font-bold text-navy hover:text-gold">
+                        <span>Operasyon ağrılı mıdır?</span>
+                        <span>+</span>
+                    </button>
+                    <p class="text-sm text-gray-500 mt-2">Lokal anestezi altında yapılan operasyonlarımızda herhangi bir ağrı hissedilmez.</p>
+                </div>
+                <div class="border-b border-gray-100 pb-4">
+                    <button class="w-full flex justify-between items-center py-2 text-left font-bold text-navy hover:text-gold">
+                        <span>İstanbul'da kaç gün kalmalıyım?</span>
+                        <span>+</span>
+                    </button>
+                    <p class="text-sm text-gray-500 mt-2">Saç ekimi ve ilk yıkama süreci için toplamda 3 gün (2 gece) kalmanız yeterlidir.</p>
+                </div>
+                <div class="border-b border-gray-100 pb-4">
+                    <button class="w-full flex justify-between items-center py-2 text-left font-bold text-navy hover:text-gold">
+                        <span>Ekilmiş saçlar dökülür mü?</span>
+                        <span>+</span>
+                    </button>
+                    <p class="text-sm text-gray-500 mt-2">Hayır, donör bölgeden (ense) alınan saçlar dökülmeme özelliğine sahiptir ve ömür boyu kalıcıdır.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy pt-20 pb-24 md:pb-12 text-white border-t border-gold/20">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-2">
+                <div class="flex items-center gap-2 mb-8">
+                    <span class="text-gold text-2xl">⚕️</span>
+                    <span class="font-serif text-2xl font-bold uppercase">Sercan Aslan <span class="text-gold">Hair</span></span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+                    Dünyanın dört bir yanından gelen misafirlerimize JCI akreditasyonlu hastanemizde, lüks ve güven odaklı saç ekimi hizmeti sunuyoruz.
+                </p>
+                <div class="flex gap-4 mt-8">
+                    <!-- Social Icons (Placeholder) -->
+                    <div class="w-10 h-10 border border-gold/30 rounded-full flex items-center justify-center text-gold hover:bg-gold hover:text-navy cursor-pointer">Ig</div>
+                    <div class="w-10 h-10 border border-gold/30 rounded-full flex items-center justify-center text-gold hover:bg-gold hover:text-navy cursor-pointer">Fb</div>
+                    <div class="w-10 h-10 border border-gold/30 rounded-full flex items-center justify-center text-gold hover:bg-gold hover:text-navy cursor-pointer">Yt</div>
+                </div>
+            </div>
+            <div>
+                <h5 class="text-gold font-bold uppercase tracking-widest text-xs mb-8">Hızlı Linkler</h5>
+                <ul class="space-y-4 text-sm text-gray-400 font-bold">
+                    <li><a href="#" class="hover:text-white transition-colors">Ana Sayfa</a></li>
+                    <li><a href="#services" class="hover:text-white transition-colors">Teknikler</a></li>
+                    <li><a href="#results" class="hover:text-white transition-colors">Sonuçlar</a></li>
+                    <li><a href="#team" class="hover:text-white transition-colors">Ekibimiz</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-gold font-bold uppercase tracking-widest text-xs mb-8">İletişim</h5>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold">📍</span>
+                        <span>Şişli, İstanbul, Türkiye</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold">📞</span>
+                        <span>+90 500 000 00 00</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold">✉️</span>
+                        <span>info@sercanaslanhair.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/5 text-[10px] text-center text-gray-500 uppercase tracking-widest">
+            © 2024 Sercan Aslan Hair. All Rights Reserved. Medical Luxury in Istanbul.
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky Bar -->
+    <div class="sticky-mobile-bar md:hidden">
+        <a href="https://wa.me/905000000000" class="flex-1 bg-green-500 text-white flex items-center justify-center gap-2 font-bold uppercase tracking-widest text-[11px] h-16">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.634 1.437h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span>WhatsApp</span>
+        </a>
+        <a href="#contact" class="flex-1 bg-gold text-navy flex items-center justify-center gap-2 font-bold uppercase tracking-widest text-[11px] h-16">
+            <span>Ücretsiz Analiz</span>
+        </a>
+    </div>
+
+    <script>
+        // Statistic Counter Function
+        const animateStats = (id, target) => {
+            let current = 0;
+            const step = target / 100;
+            const element = document.getElementById(id);
+            const interval = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    element.innerText = Math.floor(target).toLocaleString('tr-TR');
+                    clearInterval(interval);
+                } else {
+                    element.innerText = Math.floor(current).toLocaleString('tr-TR');
+                }
+            }, 20);
+        };
+
+        // Scroll Observer for Stats
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                animateStats('stat1', 15000);
+                animateStats('stat2', 12000);
+                animateStats('stat3', 50);
+                animateStats('stat4', 85);
+                observer.disconnect();
+            }
+        });
+        observer.observe(document.getElementById('stat1'));
+
+        // Quiz Steps Logic
+        window.nextStep = (current, next) => {
+            document.getElementById(`step${current}`).classList.add('hidden');
+            document.getElementById(`step${next}`).classList.remove('hidden');
+        };
+
+        window.finishAnalysis = () => {
+            document.getElementById('step3').classList.add('hidden');
+            document.getElementById('step-final').classList.remove('hidden');
+        };
+    </script>
+</body>
+</html>
