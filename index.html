@@ -116,11 +116,11 @@
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
                 <div>
                     <div class="text-4xl font-serif font-bold text-navy" id="stat1">0</div>
-                    <div class="text-[10px] uppercase tracking-widest text-gold font-bold mt-2">Başarılı Operasyon</div>
+                    <div class="text-[10px] uppercase tracking-widest text-gold font-bold mt-2" data-i18n="stats.operations">Başarılı Operasyon</div>
                 </div>
                 <div>
                     <div class="text-4xl font-serif font-bold text-navy" id="stat2">0</div>
-                    <div class="text-[10px] uppercase tracking-widest text-gold font-bold mt-2">Mutlu Hasta</div>
+                    <div class="text-[10px] uppercase tracking-widest text-gold font-bold mt-2" data-i18n="stats.happyPatients">Mutlu Hasta</div>
                 </div>
                 <div>
                     <div class="text-4xl font-serif font-bold text-navy" id="stat3">0</div>
@@ -292,19 +292,19 @@
                     <div id="step1">
                         <h4 class="text-lg font-bold text-navy mb-6 text-center">Dökülme seviyeniz nedir?</h4>
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-                            <button onclick="nextStep(1, 2)" class="border-2 border-gray-100 p-4 rounded-2xl hover:border-gold hover:bg-gold/5 transition-all">
+                            <button onclick="nextStep(1, 2, 'Hafif')" class="border-2 border-gray-100 p-4 rounded-2xl hover:border-gold hover:bg-gold/5 transition-all">
                                 <span class="text-3xl block mb-2">🌱</span>
                                 <span class="text-[10px] font-bold uppercase">Hafif</span>
                             </button>
-                            <button onclick="nextStep(1, 2)" class="border-2 border-gray-100 p-4 rounded-2xl hover:border-gold hover:bg-gold/5 transition-all">
+                            <button onclick="nextStep(1, 2, 'Orta')" class="border-2 border-gray-100 p-4 rounded-2xl hover:border-gold hover:bg-gold/5 transition-all">
                                 <span class="text-3xl block mb-2">🌿</span>
                                 <span class="text-[10px] font-bold uppercase">Orta</span>
                             </button>
-                            <button onclick="nextStep(1, 2)" class="border-2 border-gray-100 p-4 rounded-2xl hover:border-gold hover:bg-gold/5 transition-all">
+                            <button onclick="nextStep(1, 2, 'Yoğun')" class="border-2 border-gray-100 p-4 rounded-2xl hover:border-gold hover:bg-gold/5 transition-all">
                                 <span class="text-3xl block mb-2">🍂</span>
                                 <span class="text-[10px] font-bold uppercase">Yoğun</span>
                             </button>
-                            <button onclick="nextStep(1, 2)" class="border-2 border-gray-100 p-4 rounded-2xl hover:border-gold hover:bg-gold/5 transition-all">
+                            <button onclick="nextStep(1, 2, 'Sakal')" class="border-2 border-gray-100 p-4 rounded-2xl hover:border-gold hover:bg-gold/5 transition-all">
                                 <span class="text-3xl block mb-2">🧔</span>
                                 <span class="text-[10px] font-bold uppercase">Sakal</span>
                             </button>
@@ -315,9 +315,9 @@
                     <div id="step2" class="hidden">
                         <h4 class="text-lg font-bold text-navy mb-6 text-center">Yaş aralığınız nedir?</h4>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-                            <button onclick="nextStep(2, 3)" class="border-2 border-gray-100 py-4 rounded-2xl hover:border-gold font-bold">18-30</button>
-                            <button onclick="nextStep(2, 3)" class="border-2 border-gray-100 py-4 rounded-2xl hover:border-gold font-bold">31-50</button>
-                            <button onclick="nextStep(2, 3)" class="border-2 border-gray-100 py-4 rounded-2xl hover:border-gold font-bold">50+</button>
+                            <button onclick="nextStep(2, 3, '18-30')" class="border-2 border-gray-100 py-4 rounded-2xl hover:border-gold font-bold">18-30</button>
+                            <button onclick="nextStep(2, 3, '31-50')" class="border-2 border-gray-100 py-4 rounded-2xl hover:border-gold font-bold">31-50</button>
+                            <button onclick="nextStep(2, 3, '50+')" class="border-2 border-gray-100 py-4 rounded-2xl hover:border-gold font-bold">50+</button>
                         </div>
                     </div>
 
@@ -325,8 +325,8 @@
                     <div id="step3" class="hidden">
                         <h4 class="text-lg font-bold text-navy mb-6 text-center">İletişim Bilgileri</h4>
                         <div class="space-y-4">
-                            <input type="text" placeholder="Adınız Soyadınız" class="w-full bg-graylight p-5 rounded-2xl outline-none border border-transparent focus:border-gold transition-all">
-                            <input type="tel" placeholder="Telefon Numaranız (+90 ...)" class="w-full bg-graylight p-5 rounded-2xl outline-none border border-transparent focus:border-gold transition-all">
+                            <input id="fullName" type="text" placeholder="Adınız Soyadınız" class="w-full bg-graylight p-5 rounded-2xl outline-none border border-transparent focus:border-gold transition-all">
+                            <input id="phoneNumber" type="tel" placeholder="Telefon Numaranız (+90 ...)" class="w-full bg-graylight p-5 rounded-2xl outline-none border border-transparent focus:border-gold transition-all">
                             <button onclick="finishAnalysis()" class="w-full gradient-gold text-navy font-bold py-5 rounded-2xl shadow-xl hover:scale-[1.02] transition-transform uppercase tracking-widest text-sm">Analiz Sonucunu Gönder</button>
                         </div>
                         <p class="text-[9px] text-gray-400 mt-6 text-center">Verileriniz KVKK kapsamında korunmaktadır. Formu doldurarak iletişime geçmemizi kabul etmiş olursunuz.</p>
@@ -352,24 +352,73 @@
             <div class="space-y-4">
                 <div class="border-b border-gray-100 pb-4">
                     <button class="w-full flex justify-between items-center py-2 text-left font-bold text-navy hover:text-gold">
-                        <span>Operasyon ağrılı mıdır?</span>
+                        <span data-i18n="faq.q1">Operasyon ağrılı mıdır?</span>
                         <span>+</span>
                     </button>
-                    <p class="text-sm text-gray-500 mt-2">Lokal anestezi altında yapılan operasyonlarımızda herhangi bir ağrı hissedilmez.</p>
+                    <p class="text-sm text-gray-500 mt-2" data-i18n="faq.a1">Lokal anestezi altında yapılan operasyonlarımızda herhangi bir ağrı hissedilmez.</p>
                 </div>
                 <div class="border-b border-gray-100 pb-4">
                     <button class="w-full flex justify-between items-center py-2 text-left font-bold text-navy hover:text-gold">
-                        <span>İstanbul'da kaç gün kalmalıyım?</span>
+                        <span data-i18n="faq.q2">İstanbul'da kaç gün kalmalıyım?</span>
                         <span>+</span>
                     </button>
-                    <p class="text-sm text-gray-500 mt-2">Saç ekimi ve ilk yıkama süreci için toplamda 3 gün (2 gece) kalmanız yeterlidir.</p>
+                    <p class="text-sm text-gray-500 mt-2" data-i18n="faq.a2">Saç ekimi ve ilk yıkama süreci için toplamda 3 gün (2 gece) kalmanız yeterlidir.</p>
                 </div>
                 <div class="border-b border-gray-100 pb-4">
                     <button class="w-full flex justify-between items-center py-2 text-left font-bold text-navy hover:text-gold">
-                        <span>Ekilmiş saçlar dökülür mü?</span>
+                        <span data-i18n="faq.q3">Ekilmiş saçlar dökülür mü?</span>
                         <span>+</span>
                     </button>
-                    <p class="text-sm text-gray-500 mt-2">Hayır, donör bölgeden (ense) alınan saçlar dökülmeme özelliğine sahiptir ve ömür boyu kalıcıdır.</p>
+                    <p class="text-sm text-gray-500 mt-2" data-i18n="faq.a3">Hayır, donör bölgeden (ense) alınan saçlar dökülmeme özelliğine sahiptir ve ömür boyu kalıcıdır.</p>
+                </div>
+                <div class="border-b border-gray-100 pb-4">
+                    <button class="w-full flex justify-between items-center py-2 text-left font-bold text-navy hover:text-gold">
+                        <span data-i18n="faq.q4">Operasyon kaç saat sürer?</span>
+                        <span>+</span>
+                    </button>
+                    <p class="text-sm text-gray-500 mt-2" data-i18n="faq.a4">Planlamaya göre ortalama 6-8 saat sürer.</p>
+                </div>
+                <div class="border-b border-gray-100 pb-4">
+                    <button class="w-full flex justify-between items-center py-2 text-left font-bold text-navy hover:text-gold">
+                        <span data-i18n="faq.q5">Ne zaman işe dönebilirim?</span>
+                        <span>+</span>
+                    </button>
+                    <p class="text-sm text-gray-500 mt-2" data-i18n="faq.a5">Çoğu misafirimiz 2-3 gün içinde günlük hayatına dönebiliyor.</p>
+                </div>
+                <div class="border-b border-gray-100 pb-4">
+                    <button class="w-full flex justify-between items-center py-2 text-left font-bold text-navy hover:text-gold">
+                        <span data-i18n="faq.q6">İlk yıkama ne zaman yapılır?</span>
+                        <span>+</span>
+                    </button>
+                    <p class="text-sm text-gray-500 mt-2" data-i18n="faq.a6">İlk yıkama genellikle operasyon sonrası 48 saat içinde kliniğimizde yapılır.</p>
+                </div>
+                <div class="border-b border-gray-100 pb-4">
+                    <button class="w-full flex justify-between items-center py-2 text-left font-bold text-navy hover:text-gold">
+                        <span data-i18n="faq.q7">Donör alan zarar görür mü?</span>
+                        <span>+</span>
+                    </button>
+                    <p class="text-sm text-gray-500 mt-2" data-i18n="faq.a7">Doğru planlama ile donör alan dengeli kullanılır ve doğal görünüm korunur.</p>
+                </div>
+                <div class="border-b border-gray-100 pb-4">
+                    <button class="w-full flex justify-between items-center py-2 text-left font-bold text-navy hover:text-gold">
+                        <span data-i18n="faq.q8">Sonuçları ne zaman görürüm?</span>
+                        <span>+</span>
+                    </button>
+                    <p class="text-sm text-gray-500 mt-2" data-i18n="faq.a8">İlk çıkışlar 3. ayda başlar, nihai sonuçlar 12. ayda netleşir.</p>
+                </div>
+                <div class="border-b border-gray-100 pb-4">
+                    <button class="w-full flex justify-between items-center py-2 text-left font-bold text-navy hover:text-gold">
+                        <span data-i18n="faq.q9">Kadınlar için saç ekimi uygun mu?</span>
+                        <span>+</span>
+                    </button>
+                    <p class="text-sm text-gray-500 mt-2" data-i18n="faq.a9">Evet, uygun adaylarda kadın saç ekimi güvenle uygulanır.</p>
+                </div>
+                <div class="border-b border-gray-100 pb-4">
+                    <button class="w-full flex justify-between items-center py-2 text-left font-bold text-navy hover:text-gold">
+                        <span data-i18n="faq.q10">Ödeme ve paket detaylarını nasıl öğrenebilirim?</span>
+                        <span>+</span>
+                    </button>
+                    <p class="text-sm text-gray-500 mt-2" data-i18n="faq.a10">Formu doldurduktan sonra WhatsApp üzerinden kişiye özel fiyatlandırma ve paket bilgisi paylaşılır.</p>
                 </div>
             </div>
         </div>
@@ -437,6 +486,13 @@
 
     <script>
         // Statistic Counter Function
+        const formatStatValue = (id, value, isFinal = false) => {
+            if ((id === 'stat1' || id === 'stat2') && (isFinal || value >= 15000)) {
+                return '15K+';
+            }
+            return Math.floor(value).toLocaleString('tr-TR');
+        };
+
         const animateStats = (id, target) => {
             let current = 0;
             const step = target / 100;
@@ -444,10 +500,10 @@
             const interval = setInterval(() => {
                 current += step;
                 if (current >= target) {
-                    element.innerText = Math.floor(target).toLocaleString('tr-TR');
+                    element.innerText = formatStatValue(id, target, true);
                     clearInterval(interval);
                 } else {
-                    element.innerText = Math.floor(current).toLocaleString('tr-TR');
+                    element.innerText = formatStatValue(id, current);
                 }
             }, 20);
         };
@@ -456,7 +512,7 @@
         const observer = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
                 animateStats('stat1', 15000);
-                animateStats('stat2', 12000);
+                animateStats('stat2', 15000);
                 animateStats('stat3', 50);
                 animateStats('stat4', 85);
                 observer.disconnect();
@@ -465,12 +521,32 @@
         observer.observe(document.getElementById('stat1'));
 
         // Quiz Steps Logic
-        window.nextStep = (current, next) => {
+        const quizData = {
+            hairLevel: '',
+            ageRange: ''
+        };
+
+        window.nextStep = (current, next, selectedValue = '') => {
+            if (current === 1) quizData.hairLevel = selectedValue;
+            if (current === 2) quizData.ageRange = selectedValue;
             document.getElementById(`step${current}`).classList.add('hidden');
             document.getElementById(`step${next}`).classList.remove('hidden');
         };
 
         window.finishAnalysis = () => {
+            const fullName = document.getElementById('fullName').value.trim();
+            const phoneNumber = document.getElementById('phoneNumber').value.trim();
+            const message = [
+                'Merhaba, saç analizi formunu doldurdum.',
+                `Ad Soyad: ${fullName || '-'}`,
+                `Telefon: ${phoneNumber || '-'}`,
+                `Dökülme Seviyesi: ${quizData.hairLevel || '-'}`,
+                `Yaş Aralığı: ${quizData.ageRange || '-'}`
+            ].join('\n');
+
+            const whatsappUrl = `https://wa.me/905467372284?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+
             document.getElementById('step3').classList.add('hidden');
             document.getElementById('step-final').classList.remove('hidden');
         };
@@ -529,7 +605,29 @@
                 'services.title': 'İleri Seviye Ekim Teknikleri',
                 'results.title': 'Gerçek Değişimler',
                 'contact.title': 'Saç Analizinizi Şimdi Başlatın',
+                'stats.operations': '15K+ Başarılı Operasyon',
+                'stats.happyPatients': '15K+ Mutlu Hasta',
                 'faq.title': 'Sıkça Sorulan Sorular',
+                'faq.q1': 'Operasyon ağrılı mıdır?',
+                'faq.a1': 'Lokal anestezi altında yapılan operasyonlarımızda herhangi bir ağrı hissedilmez.',
+                'faq.q2': 'İstanbul\'da kaç gün kalmalıyım?',
+                'faq.a2': 'Saç ekimi ve ilk yıkama süreci için toplamda 3 gün (2 gece) kalmanız yeterlidir.',
+                'faq.q3': 'Ekilmiş saçlar dökülür mü?',
+                'faq.a3': 'Hayır, donör bölgeden (ense) alınan saçlar dökülmeme özelliğine sahiptir ve ömür boyu kalıcıdır.',
+                'faq.q4': 'Operasyon kaç saat sürer?',
+                'faq.a4': 'Planlamaya göre ortalama 6-8 saat sürer.',
+                'faq.q5': 'Ne zaman işe dönebilirim?',
+                'faq.a5': 'Çoğu misafirimiz 2-3 gün içinde günlük hayatına dönebiliyor.',
+                'faq.q6': 'İlk yıkama ne zaman yapılır?',
+                'faq.a6': 'İlk yıkama genellikle operasyon sonrası 48 saat içinde kliniğimizde yapılır.',
+                'faq.q7': 'Donör alan zarar görür mü?',
+                'faq.a7': 'Doğru planlama ile donör alan dengeli kullanılır ve doğal görünüm korunur.',
+                'faq.q8': 'Sonuçları ne zaman görürüm?',
+                'faq.a8': 'İlk çıkışlar 3. ayda başlar, nihai sonuçlar 12. ayda netleşir.',
+                'faq.q9': 'Kadınlar için saç ekimi uygun mu?',
+                'faq.a9': 'Evet, uygun adaylarda kadın saç ekimi güvenle uygulanır.',
+                'faq.q10': 'Ödeme ve paket detaylarını nasıl öğrenebilirim?',
+                'faq.a10': 'Formu doldurduktan sonra WhatsApp üzerinden kişiye özel fiyatlandırma ve paket bilgisi paylaşılır.',
                 'footer.contact': 'İletişim',
                 'mobile.whatsapp': 'WhatsApp'
             },
@@ -549,7 +647,29 @@
                 'services.title': 'Advanced Transplant Techniques',
                 'results.title': 'Real Transformations',
                 'contact.title': 'Start Your Hair Analysis Now',
+                'stats.operations': '15K+ Successful Operations',
+                'stats.happyPatients': '15K+ Happy Patients',
                 'faq.title': 'Frequently Asked Questions',
+                'faq.q1': 'Is the operation painful?',
+                'faq.a1': 'No pain is felt during the procedure thanks to local anesthesia.',
+                'faq.q2': 'How many days should I stay in Istanbul?',
+                'faq.a2': '3 days (2 nights) are usually enough for the transplant and first wash process.',
+                'faq.q3': 'Will transplanted hair fall out?',
+                'faq.a3': 'No, grafts taken from the donor area are resistant and designed to be permanent.',
+                'faq.q4': 'How long does the operation take?',
+                'faq.a4': 'Depending on planning, it takes around 6-8 hours on average.',
+                'faq.q5': 'When can I return to work?',
+                'faq.a5': 'Most guests can return to daily life within 2-3 days.',
+                'faq.q6': 'When is the first wash done?',
+                'faq.a6': 'The first wash is usually done at our clinic within 48 hours after surgery.',
+                'faq.q7': 'Will the donor area be damaged?',
+                'faq.a7': 'With proper planning, the donor area is used in a balanced way and keeps a natural look.',
+                'faq.q8': 'When will I see the results?',
+                'faq.a8': 'Initial growth starts around month 3 and final results become clear around month 12.',
+                'faq.q9': 'Is hair transplant suitable for women?',
+                'faq.a9': 'Yes, female hair transplant can be safely performed for suitable candidates.',
+                'faq.q10': 'How can I learn payment and package details?',
+                'faq.a10': 'After filling out the form, personalized pricing and package information are shared via WhatsApp.',
                 'footer.contact': 'Contact',
                 'mobile.whatsapp': 'WhatsApp'
             },
@@ -569,7 +689,29 @@
                 'services.title': 'Fortschrittliche Transplantationstechniken',
                 'results.title': 'Echte Verwandlungen',
                 'contact.title': 'Starten Sie jetzt Ihre Haaranalyse',
+                'stats.operations': '15K+ Erfolgreiche Operationen',
+                'stats.happyPatients': '15K+ Zufriedene Patienten',
                 'faq.title': 'Häufig gestellte Fragen',
+                'faq.q1': 'Ist die Operation schmerzhaft?',
+                'faq.a1': 'Dank Lokalanästhesie verspüren Sie während des Eingriffs keine Schmerzen.',
+                'faq.q2': 'Wie viele Tage sollte ich in Istanbul bleiben?',
+                'faq.a2': 'Für Transplantation und erste Haarwäsche reichen in der Regel 3 Tage (2 Nächte).',
+                'faq.q3': 'Fallen transplantierte Haare wieder aus?',
+                'faq.a3': 'Nein, Haare aus dem Spenderbereich sind widerstandsfähig und auf dauerhafte Ergebnisse ausgelegt.',
+                'faq.q4': 'Wie lange dauert die Operation?',
+                'faq.a4': 'Je nach Planung dauert sie durchschnittlich etwa 6-8 Stunden.',
+                'faq.q5': 'Wann kann ich wieder arbeiten?',
+                'faq.a5': 'Die meisten Gäste kehren innerhalb von 2-3 Tagen in den Alltag zurück.',
+                'faq.q6': 'Wann erfolgt die erste Haarwäsche?',
+                'faq.a6': 'Die erste Haarwäsche erfolgt meist innerhalb von 48 Stunden in unserer Klinik.',
+                'faq.q7': 'Wird der Spenderbereich geschädigt?',
+                'faq.a7': 'Bei korrekter Planung wird der Spenderbereich gleichmäßig genutzt und bleibt natürlich.',
+                'faq.q8': 'Wann sehe ich Ergebnisse?',
+                'faq.a8': 'Erstes Wachstum beginnt um den 3. Monat, das Endergebnis zeigt sich etwa im 12. Monat.',
+                'faq.q9': 'Ist eine Haartransplantation für Frauen geeignet?',
+                'faq.a9': 'Ja, bei geeigneten Kandidatinnen ist eine Haartransplantation sicher möglich.',
+                'faq.q10': 'Wie erfahre ich Zahlungs- und Paketdetails?',
+                'faq.a10': 'Nach dem Ausfüllen des Formulars teilen wir personalisierte Preise und Pakete per WhatsApp.',
                 'footer.contact': 'Kontakt',
                 'mobile.whatsapp': 'WhatsApp'
             },
@@ -589,7 +731,29 @@
                 'services.title': 'Tecniche Avanzate di Trapianto',
                 'results.title': 'Trasformazioni Reali',
                 'contact.title': 'Avvia Ora la Tua Analisi Capillare',
+                'stats.operations': '15K+ Operazioni Riuscite',
+                'stats.happyPatients': '15K+ Pazienti Felici',
                 'faq.title': 'Domande Frequenti',
+                'faq.q1': 'L’operazione è dolorosa?',
+                'faq.a1': 'No, grazie all’anestesia locale non si avverte dolore durante la procedura.',
+                'faq.q2': 'Quanti giorni devo restare a Istanbul?',
+                'faq.a2': 'Di solito bastano 3 giorni (2 notti) per trapianto e primo lavaggio.',
+                'faq.q3': 'I capelli trapiantati cadranno?',
+                'faq.a3': 'No, i graft prelevati dall’area donatrice sono resistenti e pensati per essere permanenti.',
+                'faq.q4': 'Quanto dura l’operazione?',
+                'faq.a4': 'In base al piano, dura mediamente tra 6 e 8 ore.',
+                'faq.q5': 'Quando posso tornare al lavoro?',
+                'faq.a5': 'La maggior parte degli ospiti torna alla vita quotidiana in 2-3 giorni.',
+                'faq.q6': 'Quando si fa il primo lavaggio?',
+                'faq.a6': 'Il primo lavaggio viene effettuato in clinica entro 48 ore dall’operazione.',
+                'faq.q7': 'L’area donatrice si danneggia?',
+                'faq.a7': 'Con una corretta pianificazione, l’area donatrice viene usata in modo equilibrato e naturale.',
+                'faq.q8': 'Quando vedrò i risultati?',
+                'faq.a8': 'La prima crescita inizia intorno al 3° mese, il risultato finale si definisce verso il 12° mese.',
+                'faq.q9': 'Il trapianto è adatto anche alle donne?',
+                'faq.a9': 'Sì, nei casi idonei il trapianto femminile è sicuro ed efficace.',
+                'faq.q10': 'Come posso conoscere prezzi e pacchetti?',
+                'faq.a10': 'Dopo aver compilato il modulo, condividiamo su WhatsApp prezzi e pacchetti personalizzati.',
                 'footer.contact': 'Contatti',
                 'mobile.whatsapp': 'WhatsApp'
             },
@@ -609,7 +773,29 @@
                 'services.title': 'Techniques Avancées de Greffe',
                 'results.title': 'Transformations Réelles',
                 'contact.title': 'Commencez Votre Analyse Capillaire',
+                'stats.operations': '15K+ Opérations Réussies',
+                'stats.happyPatients': '15K+ Patients Heureux',
                 'faq.title': 'Questions Fréquentes',
+                'faq.q1': 'L’opération est-elle douloureuse ?',
+                'faq.a1': 'Non, grâce à l’anesthésie locale, aucune douleur n’est ressentie pendant l’intervention.',
+                'faq.q2': 'Combien de jours dois-je rester à Istanbul ?',
+                'faq.a2': 'En général, 3 jours (2 nuits) suffisent pour la greffe et le premier lavage.',
+                'faq.q3': 'Les cheveux greffés vont-ils tomber ?',
+                'faq.a3': 'Non, les greffons prélevés dans la zone donneuse sont résistants et conçus pour durer.',
+                'faq.q4': 'Combien de temps dure l’opération ?',
+                'faq.a4': 'Selon le plan, elle dure en moyenne entre 6 et 8 heures.',
+                'faq.q5': 'Quand puis-je reprendre le travail ?',
+                'faq.a5': 'La plupart de nos patients reprennent leur routine en 2 à 3 jours.',
+                'faq.q6': 'Quand a lieu le premier lavage ?',
+                'faq.a6': 'Le premier lavage est généralement effectué dans notre clinique sous 48 heures.',
+                'faq.q7': 'La zone donneuse sera-t-elle abîmée ?',
+                'faq.a7': 'Avec une bonne planification, la zone donneuse est utilisée de façon équilibrée et reste naturelle.',
+                'faq.q8': 'Quand verrai-je les résultats ?',
+                'faq.a8': 'La repousse commence vers le 3e mois et le résultat final se précise vers le 12e mois.',
+                'faq.q9': 'La greffe capillaire convient-elle aux femmes ?',
+                'faq.a9': 'Oui, la greffe capillaire féminine est sûre pour les candidates appropriées.',
+                'faq.q10': 'Comment connaître les tarifs et les forfaits ?',
+                'faq.a10': 'Après avoir rempli le formulaire, nous partageons sur WhatsApp un tarif et un forfait personnalisés.',
                 'footer.contact': 'Contact',
                 'mobile.whatsapp': 'WhatsApp'
             }
