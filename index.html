@@ -40,6 +40,7 @@
         .logo-img-footer { height: 64px; width: auto; object-fit: contain; }
         .logo-img-footer-partner { height: 56px; width: auto; object-fit: contain; }
         .logo-img-footer-badge { height: 52px; width: auto; object-fit: contain; }
+        .footer-partner-logo { background: #fff; border-radius: 0.5rem; padding: 0.25rem 0.5rem; }
         .certificate-img { width: 100%; max-width: 360px; border-radius: 0.75rem; border: 1px solid rgba(212, 175, 55, 0.35); }
         @media (min-width: 768px) { .floating-wa { bottom: 30px; } }
     </style>
@@ -440,22 +441,18 @@
     <footer class="bg-navy pt-20 pb-24 md:pb-12 text-white border-t border-gold/20">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
             <div class="col-span-1 md:col-span-2">
-                <div class="flex flex-wrap items-center gap-2 mb-8">
+                <div class="mb-8">
                     <img src="sercan-aslan-clinic-logo.webp" alt="Sercan Aslan Hair Logo" class="logo-img-footer">
-                    <img src="https://cdn.healthturkiye.gov.tr/other/heart-of-health1-1.svg" alt="Health in Turkey Logo" class="logo-img-footer-partner bg-white rounded-lg px-2 py-1">
-                    <img src="https://sercanaslanhair.com/hair/wp-content/uploads/elementor/thumbs/logo-sagliktruzim-reonfwehs2we9jt0xv4lwqq54ygf5sg0pufu2vn0ls.png" alt="Health Tourism Logo" class="logo-img-footer-badge bg-white rounded-lg px-2 py-1">
-                    <img src="https://sercanaslanhair.com/hair/wp-content/uploads/2026/01/tursab.png" alt="TÜRSAB Logo" class="logo-img-footer-badge bg-white rounded-lg px-2 py-1">
-                    <img src="https://sercanaslanhair.com/hair/wp-content/uploads/2026/01/republic-of-turkey.png" alt="Republic of Turkey Logo" class="logo-img-footer-badge bg-white rounded-lg px-2 py-1">
+                </div>
+                <div class="flex flex-wrap items-center gap-2 mb-8">
+                    <img src="https://cdn.healthturkiye.gov.tr/other/heart-of-health1-1.svg" alt="Health in Turkey Logo" class="logo-img-footer-partner footer-partner-logo">
+                    <img src="https://sercanaslanhair.com/hair/wp-content/uploads/elementor/thumbs/logo-sagliktruzim-reonfwehs2we9jt0xv4lwqq54ygf5sg0pufu2vn0ls.png" alt="Health Tourism Logo" class="logo-img-footer-badge footer-partner-logo">
+                    <img src="https://sercanaslanhair.com/hair/wp-content/uploads/2026/01/tursab.png" alt="TÜRSAB Logo" class="logo-img-footer-badge footer-partner-logo">
+                    <img src="https://sercanaslanhair.com/hair/wp-content/uploads/2026/01/republic-of-turkey.png" alt="Republic of Turkey Logo" class="logo-img-footer-badge footer-partner-logo">
                 </div>
                 <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
                     <span data-i18n="footer.desc">Dünyanın dört bir yanından gelen misafirlerimize JCI akreditasyonlu hastanemizde, lüks ve güven odaklı saç ekimi hizmeti sunuyoruz.</span>
                 </p>
-                <div class="mt-8 space-y-4">
-                    <p class="text-xs text-gray-300 leading-relaxed max-w-xl">
-                        Treatments are carried out in contracted healthcare institutions that hold a Health Tourism Authorization Certificate.
-                    </p>
-                    <img src="https://sercanaslanhair.com/hair/wp-content/uploads/2026/01/Taranmis-Belge-26_page-0001-2048x1414.jpg" alt="Health Tourism Authorization Certificate" class="certificate-img">
-                </div>
                 <div class="flex gap-4 mt-8">
                     <!-- Social Icons (Placeholder) -->
                     <div class="w-10 h-10 border border-gold/30 rounded-full flex items-center justify-center text-gold hover:bg-gold hover:text-navy cursor-pointer">Ig</div>
@@ -490,8 +487,14 @@
                 </ul>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/5 text-[10px] text-center text-gray-500 uppercase tracking-widest">
-            <span data-i18n="footer.copyright">© 2024 Sercan Aslan Hair. All Rights Reserved. Medical Luxury in Istanbul.</span>
+        <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/5 space-y-4">
+            <p class="text-xs text-gray-300 leading-relaxed text-center max-w-3xl mx-auto">
+                Treatments are carried out in contracted healthcare institutions that hold a Health Tourism Authorization Certificate.
+            </p>
+            <img src="https://sercanaslanhair.com/hair/wp-content/uploads/2026/01/Taranmis-Belge-26_page-0001-2048x1414.jpg" alt="Health Tourism Authorization Certificate" class="certificate-img mx-auto">
+            <div class="text-[10px] text-center text-gray-500 uppercase tracking-widest pt-4">
+                <span data-i18n="footer.copyright">© 2024 Sercan Aslan Hair. All Rights Reserved. Medical Luxury in Istanbul.</span>
+            </div>
         </div>
     </footer>
 
