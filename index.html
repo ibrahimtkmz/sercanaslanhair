@@ -475,33 +475,41 @@
             document.getElementById('step-final').classList.remove('hidden');
         };
 
-        // Instagram results (managed from direct post links)
+        // Instagram results (official embed + dynamic process)
         const instagramPosts = [
             { postUrl: 'https://www.instagram.com/p/DGkXwiItt5o/', month: '8 Ay Sonra', graft: '4500 Greft' },
             { postUrl: 'https://www.instagram.com/p/DT5KCHWjd8y/', month: '12 Ay Sonra', graft: '5200 Greft' },
             { postUrl: 'https://www.instagram.com/p/DTNuXO2DUta/', month: '10 Ay Sonra', graft: '3800 Greft' },
-            { postUrl: 'https://www.instagram.com/p/DKRk6xQNUaw/?img_index=1', month: '9 Ay Sonra', graft: '4100 Greft' }
+            { postUrl: 'https://www.instagram.com/p/DKRk6xQNUaw/', month: '9 Ay Sonra', graft: '4100 Greft' }
         ];
 
-        const instagramGrid = document.getElementById('instagram-results-grid');
-        instagramPosts.forEach((item, index) => {
-            const postCode = item.postUrl.match(/\/p\/([^/?#]+)/)?.[1];
-            const imageUrl = postCode ? `https://www.instagram.com/p/${postCode}/media/?size=l` : item.postUrl;
+        const ensureInstagramEmbedScript = () => {
+            const existing = document.querySelector('script[src="https://www.instagram.com/embed.js"]');
+            if (existing) return;
 
-            const card = document.createElement('a');
-            card.href = item.postUrl;
-            card.target = '_blank';
-            card.rel = 'noopener noreferrer';
-            card.className = 'before-after-slider border border-gold/20 block';
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.instagram.com/embed.js';
+            script.onload = () => window.instgrm?.Embeds?.process();
+            document.body.appendChild(script);
+        };
+
+        const instagramGrid = document.getElementById('instagram-results-grid');
+        instagramPosts.forEach((item) => {
+            const card = document.createElement('div');
+            card.className = 'before-after-slider border border-gold/20 bg-white/5 p-4';
             card.innerHTML = `
-                <img src="${imageUrl}" alt="Instagram Sonuç ${index + 1}" class="w-full h-[300px] object-cover" loading="lazy" referrerpolicy="no-referrer">
-                <div class="absolute bottom-0 inset-x-0 p-4 bg-navy/80 flex justify-between items-center">
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="${item.postUrl}" data-instgrm-version="14" style="margin: 0 auto; min-width: 100%;"></blockquote>
+                <div class="mt-3 px-1 flex justify-between items-center">
                     <span class="text-[10px] font-bold uppercase tracking-widest text-gold">${item.month}</span>
                     <span class="text-[10px] font-bold uppercase tracking-widest text-white">${item.graft}</span>
                 </div>
             `;
             instagramGrid.appendChild(card);
         });
+
+        ensureInstagramEmbedScript();
+        window.instgrm?.Embeds?.process();
 
         // Language Switcher
         const translations = {
