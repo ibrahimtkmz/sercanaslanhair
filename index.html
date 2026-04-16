@@ -233,39 +233,7 @@
                 <p class="text-gray-300">Sadece "ekim" yapmıyoruz, hayat değiştiriyoruz. İşte binlerce başarı hikayemizden birkaçı.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Case 1 -->
-                <div class="before-after-slider border border-gold/20">
-                    <img src="https://www.instagram.com/p/DGkXwiItt5o/media/?size=l" alt="Instagram Sonuç 1" class="w-full h-[300px] object-cover">
-                    <div class="absolute bottom-0 inset-x-0 p-4 bg-navy/80 flex justify-between items-center">
-                        <span class="text-[10px] font-bold uppercase tracking-widest text-gold">8 Ay Sonra</span>
-                        <span class="text-[10px] font-bold uppercase tracking-widest text-white">4500 Greft</span>
-                    </div>
-                </div>
-                <!-- Case 2 -->
-                <div class="before-after-slider border border-gold/20">
-                    <img src="https://www.instagram.com/p/DT5KCHWjd8y/media/?size=l" alt="Instagram Sonuç 2" class="w-full h-[300px] object-cover">
-                    <div class="absolute bottom-0 inset-x-0 p-4 bg-navy/80 flex justify-between items-center">
-                        <span class="text-[10px] font-bold uppercase tracking-widest text-gold">12 Ay Sonra</span>
-                        <span class="text-[10px] font-bold uppercase tracking-widest text-white">5200 Greft</span>
-                    </div>
-                </div>
-                <!-- Case 3 -->
-                <div class="before-after-slider border border-gold/20">
-                    <img src="https://www.instagram.com/p/DTNuXO2DUta/media/?size=l" alt="Instagram Sonuç 3" class="w-full h-[300px] object-cover">
-                    <div class="absolute bottom-0 inset-x-0 p-4 bg-navy/80 flex justify-between items-center">
-                        <span class="text-[10px] font-bold uppercase tracking-widest text-gold">10 Ay Sonra</span>
-                        <span class="text-[10px] font-bold uppercase tracking-widest text-white">3800 Greft</span>
-                    </div>
-                </div>
-                <!-- Case 4 -->
-                <div class="before-after-slider border border-gold/20">
-                    <img src="https://www.instagram.com/p/DKRk6xQNUaw/media/?size=l" alt="Instagram Sonuç 4" class="w-full h-[300px] object-cover">
-                    <div class="absolute bottom-0 inset-x-0 p-4 bg-navy/80 flex justify-between items-center">
-                        <span class="text-[10px] font-bold uppercase tracking-widest text-gold">9 Ay Sonra</span>
-                        <span class="text-[10px] font-bold uppercase tracking-widest text-white">4100 Greft</span>
-                    </div>
-                </div>
+            <div id="instagram-results-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             </div>
             <div class="mt-12 text-center">
                 <a href="#" class="text-gold font-bold text-sm underline underline-offset-8 uppercase tracking-widest hover:text-white transition-colors">Tüm Galeriyi Gör (Instagram)</a>
@@ -506,6 +474,34 @@
             document.getElementById('step3').classList.add('hidden');
             document.getElementById('step-final').classList.remove('hidden');
         };
+
+        // Instagram results (managed from direct post links)
+        const instagramPosts = [
+            { postUrl: 'https://www.instagram.com/p/DGkXwiItt5o/', month: '8 Ay Sonra', graft: '4500 Greft' },
+            { postUrl: 'https://www.instagram.com/p/DT5KCHWjd8y/', month: '12 Ay Sonra', graft: '5200 Greft' },
+            { postUrl: 'https://www.instagram.com/p/DTNuXO2DUta/', month: '10 Ay Sonra', graft: '3800 Greft' },
+            { postUrl: 'https://www.instagram.com/p/DKRk6xQNUaw/?img_index=1', month: '9 Ay Sonra', graft: '4100 Greft' }
+        ];
+
+        const instagramGrid = document.getElementById('instagram-results-grid');
+        instagramPosts.forEach((item, index) => {
+            const postCode = item.postUrl.match(/\/p\/([^/?#]+)/)?.[1];
+            const imageUrl = postCode ? `https://www.instagram.com/p/${postCode}/media/?size=l` : item.postUrl;
+
+            const card = document.createElement('a');
+            card.href = item.postUrl;
+            card.target = '_blank';
+            card.rel = 'noopener noreferrer';
+            card.className = 'before-after-slider border border-gold/20 block';
+            card.innerHTML = `
+                <img src="${imageUrl}" alt="Instagram Sonuç ${index + 1}" class="w-full h-[300px] object-cover" loading="lazy" referrerpolicy="no-referrer">
+                <div class="absolute bottom-0 inset-x-0 p-4 bg-navy/80 flex justify-between items-center">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-gold">${item.month}</span>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-white">${item.graft}</span>
+                </div>
+            `;
+            instagramGrid.appendChild(card);
+        });
 
         // Language Switcher
         const translations = {
